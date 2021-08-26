@@ -28,9 +28,16 @@
 
 - laradock
 - windows7  >=
+- npm 7.20.3
+
 
 ## Installation
 
 > git clone https://github.com/whitexiong/laravel-angular-blog.git
 
 > composer install
+
+
+## 前端
+
+> npm install angular jquery angular-ui-router normalize-css

@@ -14,5 +14,11 @@
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
         "postcss": "^8.1.14"
+    },
+    "dependencies": {
+        "angular": "^1.8.2",
+        "angular-ui-router": "^1.0.29",
+        "jquery": "^3.6.0",
+        "normalize-css": "^2.3.1"
     }
 }
