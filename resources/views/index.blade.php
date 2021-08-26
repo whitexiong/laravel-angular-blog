@@ -14,11 +14,11 @@
     </head>
 
     <body>
-    <div ng-controller="TestController">
-        [: name :] => 1
-    </div>
+    <div class="navbar">导航栏</div>
     <div>
-        [: name :] => 2
+        <div ui-view></div>
+
     </div>
+
     </body>
 </html>
