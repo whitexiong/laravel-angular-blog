@@ -41,3 +41,7 @@
 ## 前端
 
 > npm install angular jquery angular-ui-router normalize-css
+
+## package
+
+-laravel-permission
