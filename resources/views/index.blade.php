@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh" ng-app="blog">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,6 +14,11 @@
     </head>
 
     <body>
-        hello, world
+    <div ng-controller="TestController">
+        [: name :] => 1
+    </div>
+    <div>
+        [: name :] => 2
+    </div>
     </body>
 </html>
