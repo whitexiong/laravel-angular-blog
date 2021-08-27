@@ -41,6 +41,8 @@
 ## 前端
 
 > npm install angular jquery angular-ui-router normalize-css
+> npm install
+> npm run dev
 
 ## package
 

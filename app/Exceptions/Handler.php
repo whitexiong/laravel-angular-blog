@@ -2,7 +2,10 @@
 
 namespace App\Exceptions;
 
+use App\CodeResponse;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Validation\ValidationException;
+use Symfony\Component\HttpFoundation\Response;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -13,7 +16,7 @@ class Handler extends ExceptionHandler
      * @var array
      */
     protected $dontReport = [
-        //
+        BusinessException::class
     ];
 
     /**
@@ -28,14 +31,30 @@ class Handler extends ExceptionHandler
     ];
 
     /**
-     * Register the exception handling callbacks for the application.
+     * Render an exception into an HTTP response.
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Throwable  $exception
+     * @return Response
      *
-     * @return void
+     * @throws \Throwable
      */
-    public function register()
+    public function render($request, Throwable $exception)
     {
-        $this->reportable(function (Throwable $e) {
-            //
-        });
+        //validation Exception Unified processing and formatting
+        if($exception instanceof ValidationException){
+            return response()->json([
+                'errno' => CodeResponse::PARAM_VALUE_ILLEGAL[0],
+                'errmsg' => CodeResponse::PARAM_VALUE_ILLEGAL[1],
+            ]);
+        }
+
+        //Business Exception Unified processing and formatting
+        if ($exception instanceof BusinessException) {
+            return response()->json([
+                'errno' => $exception->getCode(),
+                'errmsg' => $exception->getMessage()
+            ]); //格式化成json
+        }
+        return parent::render($request, $exception);
     }
 }
