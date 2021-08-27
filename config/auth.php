@@ -14,7 +14,7 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'web',
+        'guard' => 'blog',
         'passwords' => 'users',
     ],
 
@@ -40,7 +40,13 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+
+        'blog' => [
+            'driver' => 'jwt',
+            'provider' => 'users',
+        ],
     ],
+
 
     /*
     |--------------------------------------------------------------------------
