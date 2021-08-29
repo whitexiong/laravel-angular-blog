@@ -14,3 +14,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::any('auth/login','AuthController@login'); //账号登录
+Route::any('auth/exist','AuthController@exist'); //账号登录
