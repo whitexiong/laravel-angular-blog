@@ -17,7 +17,11 @@
             $stateProvider
                 .state('home', {
                     url: '/home',
-                    template: '首页'
+                    templateUrl: 'home.tpl'
+                })
+                .state('login', {
+                    url: '/login',
+                    templateUrl: 'login.tpl'
                 })
         })
 })();
