@@ -91,7 +91,7 @@ class RouteServiceProvider extends ServiceProvider
     }
 
     /**
-     * wx端路由
+     * blog端路由
      */
     protected function mapBlogRoutes()
     {

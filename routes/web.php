@@ -16,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
+
+Route::resource('posts', 'PostController');
+Route::resource('users', 'UserHandleController');
+Route::resource('permissions', 'PermissionController');
+Route::resource('roles', 'RoleController');
